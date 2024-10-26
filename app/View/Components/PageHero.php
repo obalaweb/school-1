@@ -9,12 +9,14 @@ use Illuminate\View\Component;
 class PageHero extends Component
 {
     public $title;
+    public $back;
     /**
      * Create a new component instance.
      */
-    public function __construct($title = null)
+    public function __construct($title = null, $back = null)
     {
         $this->title = $title;
+        $this->back = $back;
     }
 
     /**
@@ -24,6 +26,7 @@ class PageHero extends Component
     {
         return view('components.page-hero', [
             'title' => $this->title,
+            'back' => $this->back,
         ]);
     }
 }

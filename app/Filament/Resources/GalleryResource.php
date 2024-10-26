@@ -8,9 +8,11 @@ use App\Models\Gallery;
 use Filament\Forms;
 use Filament\Forms\Components\FileUpload;
 use Filament\Forms\Components\Grid;
+use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
@@ -27,16 +29,18 @@ class GalleryResource extends Resource
     {
         return $form
             ->schema([
-                Grid::make(6)
-                    ->schema([
-                        Grid::make()
-                            ->schema(self::primary())
-                            ->columnSpan(4),
+                SpatieMediaLibraryFileUpload::make('avatar')
+                    ->responsiveImages(),
+                // Grid::make(6)
+                //     ->schema([
+                //         Grid::make()
+                //             ->schema(self::primary())
+                //             ->columnSpan(4),
 
-                        Grid::make()
-                            ->schema(self::sidebar())
-                            ->columnSpan(2),
-                    ]),
+                //         Grid::make()
+                //             ->schema(self::sidebar())
+                //             ->columnSpan(2),
+                //     ]),
             ]);
     }
 
@@ -58,7 +62,7 @@ class GalleryResource extends Resource
     {
         return $table
             ->columns([
-                //
+                SpatieMediaLibraryImageColumn::make('avatar')
             ])
             ->filters([
                 //

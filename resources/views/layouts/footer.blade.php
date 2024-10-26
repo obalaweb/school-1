@@ -49,10 +49,10 @@
                                 30 Commercial Road <br> Fratton, Australia
                             </div>
                             <div class="pbmit-contact-widget-line">
-                                1-888-452-1505
+                                +256(0) 7720 32435
                             </div>
                             <div class="pbmit-contact-widget-line">
-                                info@kidschool.com
+                                info@codprez.com
                             </div>
                         </div>
                     </aside>
@@ -101,16 +101,17 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="pbmit-footer-copyright-text-area">
-                            Copyright © 2023 <a href="#">Kidzieo</a>, All Rights Reserved.
+                            Copyright © {{ date('Y') }} <a href="#">Kidzieo</a>, All Rights Reserved.
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="pbmit-footer-menu-area">
-                            <ul class="pbmit-footer-menu">
+                            {{-- <ul class="pbmit-footer-menu">
                                 <li><a href="#">Service</a></li>
                                 <li><a href="#">Faq</a></li>
                                 <li><a href="#">Careers</a></li>
-                            </ul>
+                            </ul> --}}
+                            Website Designed and Maintained by <a href="https://codprez.com" target="_blank">Codprez</a>
                         </div>
                     </div>
                 </div>

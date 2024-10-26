@@ -28,8 +28,8 @@
                             <div class="col-md-12 col-lg-5">
                                 <div class="slider-a-img-01-box slider-a-img" data-aos="zoom-in"
                                     data-aos-duration="1700">
-                                    <img src="{{ asset('assets/images/pbmit-slider/slider-a-img-01.png') }}"
-                                        class="img-fluid" alt="">
+                                    <img src="{{ asset('assets/images/slider/slider-img-2.png') }}" class="img-fluid"
+                                        alt="">
                                 </div>
                             </div>
                         </div>
@@ -96,8 +96,7 @@
                             <div class="col-md-12 col-lg-5">
                                 <div class="slider-a-img-03-box slider-a-img" data-aos="zoom-in"
                                     data-aos-duration="1700">
-                                    <img src="{{ asset('assets/images/pbmit-slider/slider-a-img-03.png') }}"
-                                        alt="">
+                                    <img src="{{ asset('assets/images/slider/slider-img.png') }}" alt="">
                                 </div>
                             </div>
                         </div>

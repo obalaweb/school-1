@@ -9,8 +9,14 @@
                 </div>
                 <div class="pbmit-breadcrumb">
                     <div class="pbmit-breadcrumb-inner">
-                        <span><a title="" href="{{ route('front') }}"
-                                class="home"><span>Kidzieo</span></a></span>
+                        <span>
+                            <a title="home" href="{{ route('front') }}" class="home"><span>Kidzieo</span>
+                            </a>
+                        </span>
+                        @if ($back)
+                            <span><a title="{{ $back }}" href="/{{ $back }}"
+                                    class="home"><span>{{ $back }}</span></a></span>
+                        @endif
                         <span class="sep">
                             <i class="pbmit-base-icon-angle-double-right"></i>
                         </span>

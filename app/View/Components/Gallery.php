@@ -2,6 +2,7 @@
 
 namespace App\View\Components;
 
+use App\Models\Gallery as ModelsGallery;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -21,6 +22,11 @@ class Gallery extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.gallery');
+        return view(
+            'components.gallery',
+            [
+                'images' => ModelsGallery::take(5)->get(),
+            ]
+        );
     }
 }

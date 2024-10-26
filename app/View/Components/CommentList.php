@@ -7,14 +7,16 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class PostList extends Component
+class CommentList extends Component
 {
+
+    public $post;
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct(Post $post)
     {
-        //
+        $this->post = $post;
     }
 
     /**
@@ -22,11 +24,6 @@ class PostList extends Component
      */
     public function render(): View|Closure|string
     {
-        return view(
-            'components.post-list',
-            [
-                'posts' => Post::where('isPublished', Post::PUBLISHED)->take(3)->get(),
-            ]
-        );
+        return view('components.comment-list', ['comments' => $this->post->comments]);
     }
 }

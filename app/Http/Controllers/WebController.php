@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
+use App\Models\Post;
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 
 class WebController extends Controller
@@ -22,7 +25,12 @@ class WebController extends Controller
     }
     public function team()
     {
-        return view('team.index');
+        return view('teams.index');
+    }
+
+    public function teamShow(Teacher $teacher)
+    {
+        return view('teams.index', ['team' => $teacher]);
     }
     public function contactUs()
     {
@@ -40,5 +48,36 @@ class WebController extends Controller
     public function admissions()
     {
         return view('admissions');
+    }
+
+    public function blog()
+    {
+        $posts = Post::where('isPublished', Post::PUBLISHED)->with('category')->paginate(6);
+        return view('blog.index', ['posts' => $posts,]);
+    }
+    public function blogShow(Post $post)
+    {
+        $nextPost = Post::where('id', '>', $post->id)
+            ->orderBy('id', 'asc')
+            ->first();
+
+        $previousPost = Post::where('id', '<', $post->id)
+            ->orderBy('id', 'asc')
+            ->first();
+
+        return view('blog.show', [
+            'post' => $post,
+            'nextPost' => $nextPost,
+            'previousPost' => $previousPost
+        ]);
+    }
+
+    public function event()
+    {
+        return view('events.index');
+    }
+    public function eventShow(Event $event)
+    {
+        return view('events.show', $event);
     }
 }

@@ -7,20 +7,20 @@
                         <ul class="pbmit-contact-info">
                             <li>
                                 <a href="mailto:info@domain.com">
-                                    <i class="pbmit-base-icon-envelope-solid"></i>info@domain.com
+                                    <i class="pbmit-base-icon-envelope-solid"></i>info@codprez.com
                                 </a>
                             </li>
                             <li>
                                 <i class="pbmit-base-icon-location-dot-solid"></i>250 Main Street, 2nd Floor.
-                                USA
+                                UG
                             </li>
                         </ul>
                     </div>
                     <div class="pbmit-pre-header-right">
                         <ul class="pbmit-contact-info">
                             <li>
-                                <a href="tel:+89(0)12562156">
-                                    <i class="pbmit-base-icon-phone-volume-solid"></i>+89(0) 1256 2156
+                                <a href="tel:+2567720 32435">
+                                    <i class="pbmit-base-icon-phone-volume-solid"></i>+256(0) 7720 32435
                                 </a>
                             </li>
                         </ul>
@@ -100,7 +100,7 @@
                                                 </ul>
                                             </li>
                                             <li><a href="{{ route('events') }}">Events</a></li>
-                                            <li><a href="{{ route('blog') }}">Blog</a></li>
+                                            <li><a href="{{ route('blog') }}">News</a></li>
                                             <li><a href="{{ route('contactUs') }}">Contact Us</a></li>
                                         </ul>
                                     </div>

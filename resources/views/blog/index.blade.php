@@ -1,25 +1,26 @@
-<section class="blog_one">
-    <div class="container">
-        <div class="row g-0">
-            <div class="col-md-9">
-                <div class="pbmit-heading-subheading">
-                    <h4 class="pbmit-subtitle">Blogs</h4>
-                    <h2 class="pbmit-title">News & Articles</h2>
-                </div>
+@extends('layouts.front')
+@section('content')
+    <!-- Page Hero -->
+    <x-page-hero title="blog" />
+    <!-- Page Hero -->
+
+    <!-- Blog Sortable Grid View -->
+    <section class="section-md pbmit-sortable-yes">
+        <div class="container">
+            <div class="pbmit-sortable-list">
+                <ul class="pbmit-sortable-list-ul">
+                    <li><a href="#" class="pbmit-sortable-link pbmit-selected" data-sortby="*">All</a></li>
+                    <li><a href="#" class="pbmit-sortable-link" data-sortby="canteen">Canteen</a></li>
+                    <li><a href="#" class="pbmit-sortable-link" data-sortby="classes">Classes</a></li>
+                    <li><a href="#" class="pbmit-sortable-link" data-sortby="education">Education</a></li>
+                    <li><a href="#" class="pbmit-sortable-link" data-sortby="indoor-games">Indoor games</a></li>
+                    <li><a href="#" class="pbmit-sortable-link" data-sortby="sports">Sports</a></li>
+                    <li><a href="#" class="pbmit-sortable-link" data-sortby="teachers">Teachers</a></li>
+                </ul>
             </div>
-            <div class="col-md-3">
-                <div class="blog-one_btn">
-                    <a href="#" class="pbmit-btn">
-                        <span>All Articles</span>
-                    </a>
-                </div>
-            </div>
-        </div>
-        <div class="swiper-slider" data-loop="true" data-autoplay="false" data-dots="false" data-arrows="false"
-            data-columns="3" data-margin="30" data-effect="slide">
-            <div class="swiper-wrapper">
+            <div class="row pbmit-element-posts-wrapper">
                 @forelse ($posts as $post)
-                    <article class="pbmit-blog-style-1 swiper-slide">
+                    <article class="pbmit-ele pbmit-blog-style-1 col-md-4 classes">
                         <div class="post-item">
                             <div class="pbminfotech-box-content">
                                 <div class="pbmit-featured-container">
@@ -38,11 +39,11 @@
                                 <div class="pbmit-category-admin-wraper d-flex align-items-center">
                                     <div class="pbmit-meta-cat-wrapper pbmit-meta-line">
                                         <div class="pbmit-meta-category">
-                                            <a href="#" rel="category tag">{{ $post->category->name }}</a>
+                                            <a href="blog-classic.html" rel="category tag">{{ $post->category->name }}</a>
                                         </div>
                                     </div>
                                     <div class="pbmit-meta-author pbmit-meta-line">
-                                        <span class="pbmit-post-author">{{ $post->author->name }}</span>
+                                        <span class="pbmit-post-author">admin</span>
                                     </div>
                                 </div>
                                 <div class="pbmit-content-wrapper">
@@ -54,9 +55,11 @@
                         </div>
                     </article>
                 @empty
-                    <p>Check back later</p>
+                    <p>Check back later </p>
                 @endforelse
+
             </div>
         </div>
-    </div>
-</section>
+    </section>
+    <!-- Blog Sortable Grid View End -->
+@endsection
